@@ -1,34 +1,47 @@
 package com.pilsa.ui.theme
 
 import androidx.compose.material3.Typography
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
+import com.pilsa.R
 
-// Set of Material typography styles to start with
-val Typography = Typography(
-    bodyLarge = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.Normal,
-        fontSize = 16.sp,
-        lineHeight = 24.sp,
-        letterSpacing = 0.5.sp
-    )
-    /* Other default text styles to override
-    titleLarge = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.Normal,
-        fontSize = 22.sp,
-        lineHeight = 28.sp,
-        letterSpacing = 0.sp
-    ),
-    labelSmall = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.Medium,
-        fontSize = 11.sp,
-        lineHeight = 16.sp,
-        letterSpacing = 0.5.sp
-    )
-    */
+
+private val preBold = FontFamily(
+    Font(R.font.pretendard_bold, FontWeight.Bold)
 )
+
+private val preRegular = FontFamily(
+    Font(R.font.pretendard_regular, FontWeight.Normal)
+)
+
+private val preThin = FontFamily(
+    Font(R.font.pretendard_thin, FontWeight.Thin)
+)
+
+val Typography = Typography(
+    headlineLarge = TextStyle(
+        fontFamily = preBold,
+        fontSize = 32.sp,
+        lineHeight = 48.sp
+    ),
+    headlineMedium = TextStyle(
+        fontFamily = preBold,
+        fontSize = 28.sp,
+        lineHeight = 42.sp
+    ),
+    headlineSmall = TextStyle(
+        fontFamily = preBold,
+        fontSize = 24.sp,
+        lineHeight = 36.sp
+    ),
+)
+
+val Typography.headMediumSmall: TextStyle
+    @Composable get() = headlineSmall.copy(
+        fontSize = 20.sp,
+        lineHeight = 30.sp
+    )
