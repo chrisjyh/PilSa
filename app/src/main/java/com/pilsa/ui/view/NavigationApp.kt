@@ -1,8 +1,6 @@
 package com.pilsa.ui.view
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -44,7 +42,7 @@ fun BottomNavigationBar(navController: NavController) {
         NavigationScreen.Home,
         NavigationScreen.List,
         NavigationScreen.Calendar,
-        NavigationScreen.Mypage
+        NavigationScreen.MyPage
     )
 
     NavigationBar (
@@ -94,7 +92,7 @@ fun BottomNavigationApp() {
             composable(NavigationScreen.Home.route) { HomeView() }
             composable(NavigationScreen.List.route) { ListScreenView() }
             composable(NavigationScreen.Calendar.route) { CalendarView() }
-            composable(NavigationScreen.Mypage.route) { MyAppView() }
+            composable(NavigationScreen.MyPage.route) { MyAppView() }
         }
     }
 }
