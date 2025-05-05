@@ -13,7 +13,7 @@ val Gray01 = Color(0xFFBDBDBD)
 val Gray02 = Color(0xFFCACACA)
 
 val Yellow01 = Color(0xFFFFEFCC)
-val Yellow02 = Color(0xFFFFCB5C)
+val Yellow02 = Color(0xFFFFF7E6)
 val Yellow03 = Color(0xFFFFCB5C)
 
 val Purple01 = Color(0xFF5C65FF)
@@ -55,16 +55,21 @@ sealed class ColorSet {
 sealed class Colors {
     data object Main {
         val background = Yellow01
+        val widgetBg = Yellow02
+        val borderBg = Yellow03
         val title = Purple02
         val white = White01
+        val white02 = White02
         val item = White02
     }
 
     data object Content  {
         val normal = Black01
-        val head = Black02
+        val normal02 = Black02
         val focus = White01
         val placeholder = Gray02
+        val calendarContent = Purple01
+        val border= Purple02
     }
 
     data object Btn {

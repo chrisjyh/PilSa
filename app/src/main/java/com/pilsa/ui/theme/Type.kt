@@ -30,14 +30,24 @@ val Typography = Typography(
     ),
     headlineMedium = TextStyle(
         fontFamily = preBold,
-        fontSize = 28.sp,
-        lineHeight = 42.sp
+        fontSize = 20.sp,
+        lineHeight = 30.sp
     ),
     headlineSmall = TextStyle(
         fontFamily = preBold,
-        fontSize = 24.sp,
-        lineHeight = 36.sp
+        fontSize = 12.sp,
+        lineHeight = 18.sp
     ),
+    bodyLarge = TextStyle(
+        fontFamily = preBold,
+        fontSize = 16.sp,
+        lineHeight = 24.sp
+    ),
+    bodyMedium = TextStyle(
+        fontFamily = preRegular,
+        fontSize = 14.sp,
+        lineHeight = 21.sp
+    )
 )
 
 val Typography.headMediumSmall: TextStyle

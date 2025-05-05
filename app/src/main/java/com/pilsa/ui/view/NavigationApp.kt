@@ -82,7 +82,12 @@ fun BottomNavigationApp() {
     val navController = rememberNavController()
 
     Scaffold(
-        bottomBar = { BottomNavigationBar(navController) }
+        bottomBar = {
+            Column {
+                BottomNavigationBar(navController)
+                AdArea()
+            }
+        }
     ) { paddingValues ->
         NavHost(
             navController = navController,
@@ -115,4 +120,11 @@ fun LogoArea(
         }
         content()
     }
+}
+
+@Composable
+fun AdArea(){
+    Row (
+       modifier = Modifier.fillMaxWidth().height(50.dp)
+    ) {}
 }
