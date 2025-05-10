@@ -8,3 +8,4 @@ sealed class NavigationScreen(val route: String, val icon: Int, val label: Strin
     data object MyPage : NavigationScreen("mypage", R.drawable.icon_nav_mypage, "MyPage")
     data object Calendar : NavigationScreen("calender", R.drawable.ico_nav_calender, "Calendar")
 }
+
