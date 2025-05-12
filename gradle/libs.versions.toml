@@ -14,6 +14,9 @@ hiltAndroid = "2.56.1"
 hiltNavigationCompose = "1.2.0"
 retrofit = "2.11.0"
 navigaion = "2.8.9"
+okhttp = "5.0.0-alpha.14"
+kotlinxSerializationJson = "1.8.1"
+retrofit2KotlinxSerializationConverter = "1.0.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -35,6 +38,10 @@ retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = 
 androidx-hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hiltNavigationCompose" }
 dagger-hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hiltAndroid" }
 hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hiltAndroid" }
+okhttp = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp" }
+logging-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp" }
+kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }
+retrofit2-kotlinx-serialization-converter = { group = "com.jakewharton.retrofit", name = "retrofit2-kotlinx-serialization-converter", version.ref = "retrofit2KotlinxSerializationConverter" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
@@ -42,3 +49,4 @@ kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 kotlin-kapt = { id ="org.jetbrains.kotlin.kapt", version.ref = "kapt"}
 google-dagger-hilt = { id = "com.google.dagger.hilt.android",version.ref = "dagger-hilt"}
+kotlin-serialize = {id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin"}
