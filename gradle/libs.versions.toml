@@ -49,3 +49,4 @@ kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 kotlin-kapt = { id ="org.jetbrains.kotlin.kapt", version.ref = "kapt"}
 google-dagger-hilt = { id = "com.google.dagger.hilt.android",version.ref = "dagger-hilt"}
+kotlin-serialize = {id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin"}

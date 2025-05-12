@@ -8,8 +8,8 @@ class CalendarRepository @Inject constructor(
     val calendarApiService: CalendarApiService
 ) {
     suspend fun getCalendarData(yearMonth: String) {
-        val result = calendarApiService.getCalendarData(yearMonth)
-        Log.d("Philsa", "result: $result")
+        Log.d("philsa", "getCalendarData send $yearMonth")
+        calendarApiService.getCalendarData(yearMonth)
     }
 
 }

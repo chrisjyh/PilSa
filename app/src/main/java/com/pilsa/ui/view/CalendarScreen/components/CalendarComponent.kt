@@ -1,5 +1,6 @@
 package com.pilsa.ui.view.CalendarScreen.components
 
+import android.util.Log
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
@@ -25,6 +26,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import com.pilsa.data.ui.CalendarDayItem
 import com.pilsa.ui.theme.Typography
 import com.pilsa.ui.theme.color.Colors
@@ -35,6 +37,7 @@ import com.pilsa.ui.viewModel.CalendarViewModel
 fun CalendarComponent(viewModel: CalendarViewModel) {
     val calendarDayItem by viewModel.dayItemFlow.collectAsState(initial = emptyList())
 
+    Log.d("philsa", "calendarDayItem : ${calendarDayItem.size}")
     Column (
         modifier = Modifier
             .fillMaxWidth()

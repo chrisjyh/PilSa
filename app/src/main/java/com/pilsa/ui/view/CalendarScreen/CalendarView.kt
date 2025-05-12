@@ -8,6 +8,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.pilsa.ui.theme.PilSaTheme
 import com.pilsa.ui.theme.color.Colors
@@ -18,7 +19,7 @@ import com.pilsa.ui.viewModel.CalendarViewModel
 
 @Composable
 fun CalendarView(){
-    val viewModel: CalendarViewModel = viewModel()
+    val viewModel: CalendarViewModel = hiltViewModel()
 
     Column (
         modifier = Modifier

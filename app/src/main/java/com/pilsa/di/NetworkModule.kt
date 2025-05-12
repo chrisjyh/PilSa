@@ -1,5 +1,6 @@
 package com.pilsa.di
 
+import android.util.Log
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import com.pilsa.data.api.CalendarApiService
 import dagger.Module
@@ -17,7 +18,6 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
-
     private const val BASE_URL = "https://www.fillsa.store"
 
     private const val AUTH_TOKEN = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNzQ2NTk3MjM3LCJleHAiOjE3NTQzNzMyMzd9.ZcigU_0X8P006X-qgBntygM1UqIHgCaHnpA7aqwnblA"
@@ -33,21 +33,38 @@ object NetworkModule {
     @Provides
     @Singleton
     fun provideOkHttpClient(): OkHttpClient {
-        val loggingInterceptor = HttpLoggingInterceptor().apply {
+        val loggingInterceptor = HttpLoggingInterceptor { message ->
+            Log.d("NetworkLog", message)
+        }.apply {
             level = HttpLoggingInterceptor.Level.BODY
         }
 
+
         val headerInterceptor = Interceptor { chain ->
             val newRequest = chain.request().newBuilder()
-                .addHeader("Authorization", "Bearer $AUTH_TOKEN")
                 .addHeader("Accept", "application/json")
+                .addHeader("Authorization", "Bearer $AUTH_TOKEN")
                 .build()
             chain.proceed(newRequest)
+        }
+
+        val customLogger = Interceptor { chain ->
+            val request = chain.request()
+            Log.d("philsa", "Request: ${request.method} ${request.url}")
+            Log.d("philsa","Headers: ${request.headers}")
+
+            val response = chain.proceed(request)
+
+            Log.d("philsa","Response: ${response.code} ${response.message}")
+            Log.d("philsa","Response Headers: ${response.headers}")
+
+            response
         }
 
         return OkHttpClient.Builder()
             .addInterceptor(headerInterceptor)
             .addInterceptor(loggingInterceptor)
+            .addInterceptor(customLogger)
             .build()
     }
 
@@ -61,6 +78,7 @@ object NetworkModule {
             .addConverterFactory(json.asConverterFactory(contentType))
             .build()
     }
+
 
     @Provides
     @Singleton
